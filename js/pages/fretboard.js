@@ -43,9 +43,11 @@ function renderFretboardLearning() {
 
     document.getElementById("module-content").innerHTML = `
 
-        <h2>📚 Nauka gryfu</h2>
+        <div class="fretboard-learning">
+            <h2>📚 Nauka gryfu</h2>
 
-        ${renderFretboardBoard({ showNotes: true })}
+            ${renderFretboardBoard({ showNotes: true })}
+        </div>
     `;
 }
 

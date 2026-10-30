@@ -142,6 +142,257 @@ h1 {
 }
 
 /* ========================================= */
+/* NOTES LEARNING                            */
+/* ========================================= */
+
+.notes-container {
+    margin-top: 24px;
+}
+
+.shared-staff-wrapper {
+    width: 100%;
+    margin-top: 20px;
+    overflow-x: auto;
+    border-radius: 12px;
+    background: #1e1e1e;
+    overscroll-behavior-x: contain;
+}
+
+.staff-svg {
+    display: block;
+    width: 100%;
+    max-width: 220px;
+    height: auto;
+    margin: 4px auto;
+    overflow: visible;
+}
+
+.staff-lines,
+.staff-ledger-line {
+    fill: none;
+    stroke: #bdbdbd;
+    stroke-width: 1.5;
+}
+
+.shared-staff-svg {
+    max-width: none;
+    margin: 0;
+}
+
+.shared-staff-note-label {
+    fill: #ddd;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    text-anchor: middle;
+}
+
+.staff-clef {
+    fill: #ddd;
+    font-family: "Noto Music", "Segoe UI Symbol", serif;
+    font-size: 76px;
+}
+
+.staff-note-head {
+    fill: #7c5ce0;
+    stroke: white;
+    stroke-width: 1;
+}
+
+.staff-accidental {
+    fill: #ddd;
+    font-family: Arial, sans-serif;
+    font-size: 22px;
+}
+
+.notes-quiz {
+    max-width: 760px;
+}
+
+.notes-quiz > p:first-of-type {
+    margin-top: 8px;
+    color: #bbb;
+}
+
+.notes-quiz-range {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 16px;
+}
+
+.notes-quiz-range label {
+    display: grid;
+    gap: 6px;
+    color: #ddd;
+}
+
+.notes-quiz-range select {
+    min-height: 44px;
+    padding: 8px 12px;
+    border: 1px solid #555;
+    border-radius: 10px;
+    background: #2b2b2b;
+    color: white;
+    font-size: 16px;
+}
+
+.notes-quiz .staff-svg {
+    margin-top: 12px;
+}
+
+.piano-label-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    min-height: 44px;
+    margin-top: 12px;
+    color: #ddd;
+    cursor: pointer;
+    user-select: none;
+}
+
+.piano-label-toggle input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+}
+
+.piano-label-switch {
+    position: relative;
+    width: 44px;
+    height: 24px;
+    flex: 0 0 44px;
+    border-radius: 999px;
+    background: #555;
+    transition: background 0.2s ease;
+}
+
+.piano-label-switch::after {
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: white;
+    transition: transform 0.2s ease;
+}
+
+.piano-label-toggle input:checked + .piano-label-switch {
+    background: #6b46c1;
+}
+
+.piano-label-toggle input:checked + .piano-label-switch::after {
+    transform: translateX(20px);
+}
+
+.piano-label-toggle input:focus-visible + .piano-label-switch {
+    outline: 2px solid white;
+    outline-offset: 3px;
+}
+
+.piano-keyboard {
+    display: flex;
+    width: 100%;
+    min-width: 300px;
+    max-width: 560px;
+    margin: 16px auto;
+}
+
+.piano-key-slot {
+    position: relative;
+    flex: 1 1 0;
+    min-width: 0;
+    height: 190px;
+}
+
+.piano-key {
+    font: inherit;
+    cursor: pointer;
+    padding: 0;
+}
+
+.piano-key-white {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #777;
+    border-radius: 0 0 5px 5px;
+    background: #f5f5f5;
+    color: #555;
+}
+
+.piano-key-black {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    right: -32%;
+    z-index: 1;
+    width: 64%;
+    height: 62%;
+    border: 1px solid #080808;
+    border-radius: 0 0 4px 4px;
+    background: #171717;
+    color: white;
+}
+
+.piano-key-label {
+    display: block;
+    max-width: 100%;
+    overflow: hidden;
+    font-size: 13px;
+    font-weight: bold;
+    line-height: 1;
+    text-align: center;
+    text-overflow: clip;
+    white-space: nowrap;
+    pointer-events: none;
+}
+
+.piano-key-black .piano-key-label {
+    font-size: 11px;
+}
+
+.piano-key-white.selected {
+    background: #d7c8ff;
+    box-shadow: inset 0 0 0 3px #7c5ce0;
+}
+
+.piano-key-black.selected {
+    background: #7c5ce0;
+}
+
+.piano-key.out-of-range {
+    cursor: not-allowed;
+}
+
+.piano-key-white.out-of-range {
+    background: #b8b8b8;
+}
+
+.piano-key-black.out-of-range {
+    background: #333;
+}
+
+.notes-quiz .button-row {
+    justify-content: center;
+}
+
+.notes-quiz-result {
+    min-height: 24px;
+    margin-top: 12px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* ========================================= */
 /* CHORD QUIZ                                */
 /* ========================================= */
 
@@ -470,6 +721,41 @@ h1 {
         margin-top: 16px;
     }
 
+    .piano-keyboard {
+        min-width: 0;
+    }
+
+    .piano-key-slot {
+        height: 160px;
+    }
+
+    .piano-key-label {
+        font-size: 11px;
+    }
+
+    .piano-key-black .piano-key-label {
+        font-size: 9px;
+    }
+
+    .fretboard-learning .fret-cell,
+    .fretboard-learning .open-string-note {
+        height: 44px;
+    }
+
+    .fretboard-learning .note-circle {
+        width: 32px;
+        height: 32px;
+        font-size: 12px;
+    }
+
+    .fretboard-learning .fret-number {
+        font-size: 14px;
+    }
+
+    .fretboard-learning .marker-cell {
+        font-size: 20px;
+    }
+
     .open-string-header {
         margin-bottom: 4px;
         font-size: 13px;
@@ -567,8 +853,27 @@ h1 {
         height: 36px;
     }
 
+    .fretboard-learning .fret-cell,
+    .fretboard-learning .open-string-note {
+        height: 40px;
+    }
+
     .open-string-note {
         height: 36px;
+    }
+
+    .fretboard-learning .note-circle {
+        width: 30px;
+        height: 30px;
+        font-size: 11px;
+    }
+
+    .fretboard-learning .fret-number {
+        font-size: 13px;
+    }
+
+    .fretboard-learning .marker-cell {
+        font-size: 19px;
     }
 
     .note-circle {
