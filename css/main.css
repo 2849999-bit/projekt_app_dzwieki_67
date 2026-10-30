@@ -1,0 +1,365 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #121212;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    text-align: center;
+    color: #aaaaaa;
+    margin-bottom: 40px;
+}
+
+/* ========================================= */
+/* HOME                                      */
+/* ========================================= */
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: #1e1e1e;
+    border-radius: 15px;
+    padding: 30px;
+    text-align: center;
+    font-size: 22px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    background: #2b2b2b;
+    transform: translateY(-5px);
+}
+
+/* ========================================= */
+/* NAVIGATION                                */
+/* ========================================= */
+
+.back-button {
+    background: #6b46c1;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.back-button:hover {
+    background: #7c5ce0;
+}
+
+#module-content {
+    margin-top: 30px;
+}
+
+/* ========================================= */
+/* MODE BUTTONS                              */
+/* ========================================= */
+
+.mode-selector {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.mode-button {
+    background: #6b46c1;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    padding: 20px 30px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.mode-button:hover {
+    background: #7c5ce0;
+}
+
+/* ========================================= */
+/* CHORDS LEARNING                           */
+/* ========================================= */
+
+.learning-container {
+    max-width: 1000px;
+}
+
+.learning-type {
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.learning-type select {
+    margin-left: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    background: #2b2b2b;
+    color: white;
+    border: none;
+}
+
+.learning-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.learning-card {
+    background: #1e1e1e;
+    border-radius: 15px;
+    padding: 20px;
+}
+
+.learning-card h3 {
+    margin-bottom: 15px;
+    color: #7c5ce0;
+}
+
+.learning-card p {
+    margin-bottom: 8px;
+}
+
+/* ========================================= */
+/* CHORD QUIZ                                */
+/* ========================================= */
+
+.chord-container {
+    max-width: 700px;
+}
+
+.answer-boxes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.answer-box {
+    background: #1f1f1f;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.answer-box strong {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.answer-box div {
+    font-size: 24px;
+}
+
+.note-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.note-button {
+    padding: 18px;
+    border: none;
+    border-radius: 12px;
+    background: #2b2b2b;
+    color: white;
+    cursor: pointer;
+    font-size: 18px;
+    transition: 0.2s;
+}
+
+.note-button:hover {
+    background: #6b46c1;
+}
+
+.button-row {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.button-row button {
+    background: #6b46c1;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 12px 18px;
+    cursor: pointer;
+}
+
+.button-row button:hover {
+    background: #7c5ce0;
+}
+
+#result {
+    margin-top: 25px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* ========================================= */
+/* FRETBOARD                                 */
+/* ========================================= */
+
+.fretboard-wrapper {
+    margin-top: 30px;
+    overflow-x: auto;
+}
+
+.fret-numbers {
+    display: flex;
+    align-items: center;
+}
+
+.open-string-header {
+    width: 70px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: #ddd;
+
+    margin-bottom: 8px;
+}
+
+.nut-header {
+    width: 6px;
+    flex-shrink: 0;
+}
+
+.fret-number {
+    width: 70px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: #ddd;
+
+    margin-bottom: 8px;
+}
+
+.fretboard {
+    display: flex;
+    flex-direction: column;
+}
+
+.string-row {
+    display: flex;
+}
+
+.open-string-note {
+    width: 70px;
+    height: 60px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nut-line {
+    width: 6px;
+    background: white;
+}
+
+.fret-cell {
+    width: 70px;
+    height: 60px;
+
+    border: 1px solid #666;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.note-circle {
+    width: 48px;
+    height: 48px;
+
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.fret-markers {
+    display: flex;
+    align-items: center;
+    margin-top: 12px;
+}
+
+.marker-cell {
+    width: 70px;
+
+    text-align: center;
+
+    color: #888;
+
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* ========================================= */
+/* MOBILE                                    */
+/* ========================================= */
+
+@media (max-width: 768px) {
+
+    .fret-cell {
+        width: 60px;
+        height: 55px;
+    }
+
+    .fret-number {
+        width: 60px;
+    }
+
+    .marker-cell {
+        width: 60px;
+    }
+
+    .open-string-note {
+        width: 60px;
+    }
+
+    .open-string-header {
+        width: 60px;
+    }
+
+    .note-circle {
+        width: 42px;
+        height: 42px;
+        font-size: 12px;
+    }
+}

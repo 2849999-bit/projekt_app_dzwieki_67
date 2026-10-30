@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Trainer</title>
+
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+<div class="container">
+
+    <div id="home-screen">
+
+        <h1>🎵 Music Trainer</h1>
+
+        <p class="subtitle">
+            Trening teorii muzyki dla gitary i pianina
+        </p>
+
+        <div class="cards">
+
+            <div class="card" onclick="openPage('chords')">
+                🎵 Akordy
+            </div>
+
+            <div class="card" onclick="openPage('fretboard')">
+                🎸 Gryf
+            </div>
+
+            <div class="card" onclick="openPage('notes')">
+                🎹 Nuty
+            </div>
+
+            <div class="card" onclick="openPage('scales')">
+                🎼 Skale
+            </div>
+
+            <div class="card" onclick="openPage('metronome')">
+                🥁 Metronom
+            </div>
+
+            <div class="card" onclick="openPage('circle')">
+                ⭕ Koło kwintowe
+            </div>
+
+        </div>
+
+    </div>
+
+    <div id="module-screen" style="display:none">
+
+        <button class="back-button" onclick="goHome()">
+            ← Powrót
+        </button>
+
+        <h2 id="module-title"></h2>
+
+        <div id="module-content"></div>
+
+    </div>
+
+</div>
+
+<script src="js/data/fretboardData.js"></script>
+
+<script src="js/data/chordsData.js"></script>
+
+<script src="js/pages/chords.js"></script>
+<script src="js/pages/fretboard.js"></script>
+<script src="js/pages/notes.js"></script>
+<script src="js/pages/scales.js"></script>
+<script src="js/pages/metronome.js"></script>
+<script src="js/pages/circle.js"></script>
+
+<script src="js/app.js"></script>
+</body>
+</html>
