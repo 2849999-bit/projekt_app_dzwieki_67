@@ -225,6 +225,10 @@ h1 {
 /* ========================================= */
 
 .fretboard-wrapper {
+    --open-string-width: 70px;
+    --nut-width: 6px;
+    --fret-width: 70px;
+
     margin-top: 30px;
     overflow-x: auto;
     overscroll-behavior-x: contain;
@@ -237,7 +241,8 @@ h1 {
 }
 
 .open-string-header {
-    width: 76px;
+    width: var(--open-string-width);
+    flex: 0 0 var(--open-string-width);
 
     display: flex;
     justify-content: center;
@@ -248,12 +253,13 @@ h1 {
 }
 
 .nut-header {
-    width: 6px;
-    flex-shrink: 0;
+    width: var(--nut-width);
+    flex: 0 0 var(--nut-width);
 }
 
 .fret-number {
-    width: 70px;
+    width: var(--fret-width);
+    flex: 0 0 var(--fret-width);
 
     display: flex;
     justify-content: center;
@@ -295,7 +301,8 @@ h1 {
 }
 
 .open-string-note {
-    width: 70px;
+    width: var(--open-string-width);
+    flex: 0 0 var(--open-string-width);
     height: 60px;
 
     display: flex;
@@ -306,7 +313,8 @@ h1 {
 }
 
 .nut-line {
-    width: 6px;
+    width: var(--nut-width);
+    flex: 0 0 var(--nut-width);
     background: white;
 
     position: relative;
@@ -314,7 +322,8 @@ h1 {
 }
 
 .fret-cell {
-    width: 70px;
+    width: var(--fret-width);
+    flex: 0 0 var(--fret-width);
     height: 60px;
 
     border-right: 2px solid #666;
@@ -352,7 +361,8 @@ h1 {
 }
 
 .marker-cell {
-    width: 70px;
+    width: var(--fret-width);
+    flex: 0 0 var(--fret-width);
 
     text-align: center;
 
@@ -442,6 +452,12 @@ h1 {
 
 @media (max-width: 768px) {
 
+    .fretboard-wrapper {
+        --open-string-width: 52px;
+        --nut-width: 4px;
+        --fret-width: 48px;
+    }
+
     .container {
         padding: 20px;
     }
@@ -455,45 +471,30 @@ h1 {
     }
 
     .open-string-header {
-        width: 52px;
         margin-bottom: 4px;
         font-size: 13px;
     }
 
-    .nut-header,
-    .nut-line {
-        width: 4px;
-        flex: 0 0 4px;
-    }
-
     .fret-cell {
-        width: 48px;
         height: 40px;
-        flex: 0 0 48px;
     }
 
     .fret-number {
-        width: 48px;
-        flex: 0 0 48px;
         margin-bottom: 4px;
         font-size: 12px;
     }
 
     .marker-cell {
-        width: 48px;
-        flex: 0 0 48px;
         font-size: 18px;
     }
 
     .open-string-note {
-        width: 52px;
         height: 40px;
-        flex: 0 0 52px;
     }
 
     .note-circle {
-        width: 30px;
-        height: 30px;
+        width: 28px;
+        height: 28px;
         font-size: 11px;
     }
 
@@ -553,15 +554,13 @@ h1 {
 
 @media (max-width: 420px) {
 
-    .container {
-        padding: 14px;
+    .fretboard-wrapper {
+        --open-string-width: 46px;
+        --fret-width: 42px;
     }
 
-    .fret-cell,
-    .fret-number,
-    .marker-cell {
-        width: 42px;
-        flex-basis: 42px;
+    .container {
+        padding: 14px;
     }
 
     .fret-cell {
@@ -569,18 +568,12 @@ h1 {
     }
 
     .open-string-note {
-        width: 46px;
         height: 36px;
-        flex-basis: 46px;
-    }
-
-    .open-string-header {
-        width: 46px;
     }
 
     .note-circle {
-        width: 27px;
-        height: 27px;
+        width: 26px;
+        height: 26px;
         font-size: 10px;
     }
 
