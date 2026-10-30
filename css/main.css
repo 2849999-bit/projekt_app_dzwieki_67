@@ -153,7 +153,6 @@ h1 {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 15px;
-
     margin-top: 20px;
     margin-bottom: 30px;
 }
@@ -236,14 +235,13 @@ h1 {
 }
 
 .open-string-header {
-    width: 70px;
+    width: 76px;
 
     display: flex;
     justify-content: center;
     align-items: center;
 
     color: #ddd;
-
     margin-bottom: 8px;
 }
 
@@ -260,7 +258,6 @@ h1 {
     align-items: center;
 
     color: #ddd;
-
     margin-bottom: 8px;
 }
 
@@ -271,6 +268,26 @@ h1 {
 
 .string-row {
     display: flex;
+    position: relative;
+}
+
+.string-row::before {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    right: 0;
+
+    top: 50%;
+
+    height: 2px;
+
+    background: #808080;
+
+    transform: translateY(-50%);
+
+    z-index: 1;
 }
 
 .open-string-note {
@@ -280,22 +297,29 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
+
+    position: relative;
 }
 
 .nut-line {
     width: 6px;
     background: white;
+
+    position: relative;
+    z-index: 5;
 }
 
 .fret-cell {
     width: 70px;
     height: 60px;
 
-    border: 1px solid #666;
+    border-right: 2px solid #666;
 
     display: flex;
     justify-content: center;
     align-items: center;
+
+    position: relative;
 }
 
 .note-circle {
@@ -311,6 +335,9 @@ h1 {
     color: white;
     font-weight: bold;
     font-size: 14px;
+
+    position: relative;
+    z-index: 2;
 }
 
 .fret-markers {
@@ -354,7 +381,7 @@ h1 {
     }
 
     .open-string-header {
-        width: 60px;
+        width: 66px;
     }
 
     .note-circle {

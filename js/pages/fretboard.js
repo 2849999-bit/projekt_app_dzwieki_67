@@ -39,7 +39,7 @@ function renderFretboardLearning() {
                 <div class="nut-header"></div>
     `;
 
-    for(let fret = 1; fret <= 12; fret++) {
+    for (let fret = 1; fret <= 12; fret++) {
 
         html += `
             <div class="fret-number">
@@ -54,15 +54,16 @@ function renderFretboardLearning() {
             <div class="fretboard">
     `;
 
-    for(let string = 5; string >= 0; string--) {
+    for (let string = 5; string >= 0; string--) {
 
-        html += `<div class="string-row">`;
+        html += `
+            <div class="string-row">
+        `;
 
         const openNote =
             getNoteForPosition(string, 0);
 
         html += `
-
             <div class="open-string-note">
 
                 <div
@@ -78,7 +79,7 @@ function renderFretboardLearning() {
             <div class="nut-line"></div>
         `;
 
-        for(let fret = 1; fret <= 12; fret++) {
+        for (let fret = 1; fret <= 12; fret++) {
 
             const note =
                 getNoteForPosition(string, fret);
@@ -98,7 +99,9 @@ function renderFretboardLearning() {
             `;
         }
 
-        html += `</div>`;
+        html += `
+            </div>
+        `;
     }
 
     html += `
@@ -111,7 +114,7 @@ function renderFretboardLearning() {
                 <div class="nut-header"></div>
     `;
 
-    for(let fret = 1; fret <= 12; fret++) {
+    for (let fret = 1; fret <= 12; fret++) {
 
         let marker = "";
 
@@ -154,7 +157,7 @@ function renderFretboardQuizSetup() {
         <h2>🧠 Quiz gryfu</h2>
 
         <p>
-            Konfiguracja quizu będzie dodana w następnym kroku.
+            Konfiguracja quizu będzie dodana w kolejnym kroku.
         </p>
 
     `;
@@ -162,7 +165,8 @@ function renderFretboardQuizSetup() {
 
 function getNoteForPosition(stringIndex, fret) {
 
-    const openNote = STRING_TUNING[stringIndex];
+    const openNote =
+        STRING_TUNING[stringIndex];
 
     const startIndex =
         NOTES.indexOf(openNote);
