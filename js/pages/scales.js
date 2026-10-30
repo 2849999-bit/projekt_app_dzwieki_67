@@ -5,6 +5,6 @@ function renderScalesPage() {
 
     document.getElementById("module-content").innerHTML = `
         <h3>Moduł skal</h3>
-        <p>Tutaj pojawią się skale na gryfie.</p>
+        <p>Tutaj pojawią się skale</p>
     `;
 }

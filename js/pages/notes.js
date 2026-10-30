@@ -3,7 +3,7 @@ const notesQuizState = {
     selectedNote: null,
     checked: false,
     revealed: false,
-    showPianoKeyNames: true,
+    showPianoKeyNames: false,
     lowestNote: "C4",
     highestNote: "G5"
 };
@@ -138,8 +138,7 @@ function renderNotesQuiz() {
     document.getElementById("module-content").innerHTML = `
         <div class="notes-container">
             <div class="notes-quiz">
-                <h2>🎹 Piano Notes Quiz</h2>
-                <p>Wybierz dźwięk odpowiadający nucie na pięciolinii.</p>
+               
                 <div class="notes-quiz-range">
                     <label>
                         Najniższa nuta
